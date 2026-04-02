@@ -291,7 +291,6 @@ def main() -> None:
 
     if not st.session_state.get("file_saved"):
         st.divider()
-        render_placeholder_next_steps()
         return
 
     file_type = st.session_state.get("uploaded_file_type")
@@ -325,7 +324,6 @@ def main() -> None:
             except Exception as exc:
                 st.session_state["error_message"] = "Failed to extract document: {0}".format(exc)
         st.divider()
-        render_placeholder_next_steps()
         return
 
     render_extraction_summary()
@@ -362,7 +360,6 @@ def main() -> None:
 
     if not st.session_state.get("page_range_confirmed"):
         st.divider()
-        render_placeholder_next_steps()
         return
 
     render_page_range_summary()
@@ -395,7 +392,6 @@ def main() -> None:
             except Exception as exc:
                 st.session_state["error_message"] = "Failed to load selected pages: {0}".format(exc)
         st.divider()
-        render_placeholder_next_steps()
         return
 
     render_selected_pages_summary()
@@ -435,7 +431,6 @@ def main() -> None:
             except Exception as exc:
                 st.session_state["error_message"] = "Failed to create chunks: {0}".format(exc)
         st.divider()
-        render_placeholder_next_steps()
         return
 
     load_existing_checkpoint_into_state()
@@ -452,7 +447,6 @@ def main() -> None:
                 run_translation_flow(resume_mode=False)
 
         st.divider()
-        render_placeholder_next_steps()
         return
 
     render_translated_summary()
@@ -482,7 +476,6 @@ def main() -> None:
             except Exception as exc:
                 st.session_state["error_message"] = "Failed to export Word file: {0}".format(exc)
         st.divider()
-        render_placeholder_next_steps()
         return
 
     render_export_summary()
