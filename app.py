@@ -500,7 +500,7 @@ def main() -> None:
         )
 
     st.divider()
-    render_placeholder_next_steps()
+
 
 
 if __name__ == "__main__":
